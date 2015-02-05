@@ -1,0 +1,36 @@
+body {
+    padding-top: 65px;
+    width: 100%;
+    margin: 0px auto;
+    font-family: Verdana, "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+}
+
+form, table {
+    margin-top: 20px;
+}
+
+.ay_hide {
+    display: none;
+}
+
+.ay_center {
+    text-align: center;
+}
+
+.ay_right {
+    text-align: right;
+}
+
+.ay_deleted {
+    text-decoration: line-through;
+}
+
+.ay_line_space {
+    height: 1em;
+}
+
+div.ay_error {
+    color: red;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}

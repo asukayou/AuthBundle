@@ -1,0 +1,45 @@
+# 共通
+Name: 名前
+New: 新規
+Regist: 登録
+Update: 更新
+Cancel: キャンセル
+# 共通メッセージ
+'Please login to a system.': 'システムにログインしてください。'
+'Welcome.': 'ようこそ'
+# 確認メッセージ
+'It registers.\nIs it all right?': '登録します。\nよろしいですか？'
+'It updates.\nIs it all right?': '更新します。\nよろしいですか？'
+'A password is reset.\nIs it all right?': 'パスワードをリセットします。\nよろしいですか？'
+# ヘッダ、タイトル
+'%name%': '%name%さん'
+# メニュー
+Change Password: パスワード変更
+Manage User: ユーザー管理
+Logout: ログアウト
+Reset Password: パスワードリセット
+Login: ログイン
+# ユーザー
+User Registration: ユーザー登録
+User Detail: ユーザー詳細
+Username: ユーザーＩＤ
+User ID: ユーザーＩＤ
+Email: メールアドレス
+Admin: 管理
+Active: 有効
+Sort: 並び順
+Memo: メモ
+# パスワード
+Old password: 旧パスワード
+Password: パスワード
+Password confirm: パスワード確認
+# 認証
+'User account is locked.': 'アカウントがロックされています。'
+'User account is disabled.': 'アカウントが無効です。'
+'User account has expired.': 'アカウントが有効期限切れです。'
+'User credentials have expired.': '証明書が有効期限切れです。'
+'Bad credentials': 'ユーザーＩＤかパスワードが間違っています。'
+# メール制御
+'This System sent e-mail for login.': 'ログイン用のメールを送信しました。'
+# メール件名
+'Welcome': 'ようこそ'

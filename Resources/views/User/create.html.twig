@@ -1,0 +1,35 @@
+{% extends 'AyAuthBundle::layout.html.twig' %}
+
+{% block title %}{{ 'User Registration' | trans }}{% endblock %}
+
+{% block main %}
+    <form id="frm_post" action="{{ path('user_create') }}" method="post" class="form-horizontal">
+        {{ form_errors(form) }}
+        {{ form_rest(form) }}
+        <div class="form-group">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-10">
+                <button type="submit" id="btn_create" class="btn btn-primary">{{ 'Regist' | trans }}</button>
+                <button type="button" id="btn_cancel" class="btn">{{ 'Cancel' | trans }}</button>
+            </div>
+        </div>
+    </form>
+{% endblock %}
+
+{% block javascripts %}
+<script type="text/javascript">
+$(function(){
+
+    $('#frm_post').submit( function(){
+        if (!confirm("{{ 'It registers.\\nIs it all right?' | trans }}")) {
+            return false;
+        }
+    });
+
+    $('#btn_cancel').click( function(){
+        location.replace('{{ path('user_index') }}');
+    });
+
+});
+</script>
+{% endblock %}

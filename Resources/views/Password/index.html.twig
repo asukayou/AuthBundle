@@ -1,0 +1,25 @@
+{% extends 'AyAuthBundle::layout.html.twig' %}
+
+{% block title %}{{ 'Change Password' | trans }}{% endblock %}
+
+{% block main %}
+    {# form(form) #}
+    <form id="frm_post" action="{{ path('password_index') }}" method="post" class="form-horizontal">
+        {{ form_errors(form) }}
+        {{ form_rest(form) }}
+    </form>
+{% endblock %}
+
+{% block javascripts %}
+<script type="text/javascript">
+$(function(){
+
+$("#frm_post").submit( function(){
+    if (!confirm("{{ 'It updates.\\nIs it all right?' | trans }}")) {
+        return false;
+    }
+});
+
+});
+</script>
+{% endblock %}

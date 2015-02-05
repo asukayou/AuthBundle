@@ -1,0 +1,3 @@
+# パスワード
+'This value should be the user''s current password.': 'パスワードが間違っています。'
+'The password cannot match confirm one.': 'パスワードとパスワード確認が一致しません。'

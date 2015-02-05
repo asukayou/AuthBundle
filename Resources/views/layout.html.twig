@@ -1,0 +1,16 @@
+{% extends 'AyAuthBundle::base.html.twig' %}
+
+{% block body -%}
+    <div id="main">
+        <div class="container">
+            {% block main %}{% endblock %}
+        </div>
+    </div>
+    <div class="footer">
+        <div class="container">
+            <p class="text-muted">
+                {% block footer %}{% endblock %}
+            </p>
+        </div>
+    </div>
+{% endblock %}

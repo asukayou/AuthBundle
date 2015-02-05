@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <!--
+    <services>
+        <service id="ay_auth.example" class="Ay\AuthBundle\Example">
+            <argument type="service" id="service_id" />
+            <argument>plain_value</argument>
+            <argument>%parameter_name%</argument>
+        </service>
+    </services>
+    -->
+    
+    <parameters>
+        <parameter key="ay_auth.navbar.class">Ay\AuthBundle\EventListener\NavbarListener</parameter>
+        <parameter key="ay_auth.common.system_function.class">Ay\AuthBundle\Common\SystemFunction</parameter>
+    </parameters>
+
+    <services>
+        <service id="ay_auth.navbar" class="%ay_auth.navbar.class%">
+            <tag name="kernel.event_subscriber" />
+            <argument type="service" id="twig" />
+            <argument type="service" id="service_container" />
+<!--
+            <argument>%ay_auth.navbar.intercept_redirects%</argument>
+            <argument>%ay_auth.navbar.mode%</argument>
+            <argument>%ay_auth.navbar.position%</argument>
+            <argument type="service" id="router" on-invalid="ignore" />
+            <argument />
+-->
+<!-- paths that should be excluded from the AJAX requests shown in the toolbar -->
+        </service>
+        <service id="ay_auth.common.system_function" class="%ay_auth.common.system_function.class%">
+            <argument type="service" id="doctrine.orm.entity_manager" />
+            <argument type="service" id="service_container" />
+        </service>
+    </services>
+    
+</container>

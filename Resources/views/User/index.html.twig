@@ -1,0 +1,60 @@
+{% extends 'AyAuthBundle::layout.html.twig' %}
+
+{% block title %}{{ 'Manage User' | trans }}{% endblock %}
+
+{% block main %}
+    <script type="text/javascript">
+    {% for sesMsg in app.session.flashBag.get('ay_ses_msg') %}
+         alert('{{ sesMsg }}');
+    {% endfor %}
+    </script>
+    
+    <div class="ay_item">
+        <button type="button" id="btn_new" class="btn">{{ 'New' | trans }}</button>
+    </div>
+    <div>
+        <table id="pager_table" class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th class="ay_hide">id</th>
+                    <th>{{ 'No.' | trans }}</th>
+                    <th>{{ 'User ID' | trans }}</th>
+                    <th>{{ 'Name' | trans }}</th>
+                    <th>{{ 'Email' | trans }}</th>
+                    <th>{{ 'Admin' | trans }}</th>
+                    <th>{{ 'Sort' | trans }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                    <tr class="ay_sel_row{% if not user.active %} ay_deleted{% endif %}">
+                        <td class="ay_hide"><a href="{{ path('user_update', { 'id': user.id }) }}">{{ user.id }}</a></td>
+                        <td>{{ loop.index }}</td>
+                        <td>{{ user.username }}</td>
+                        <td>{{ user.name }}</td>
+                        <td>{{ user.email }}</td>
+                        <td class="ay_center">{% if user.admin %}<span class="glyphicon glyphicon-ok-circle"></span>{% endif %}</td>
+                        <td>{{ user.sort }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+<script type="text/javascript">
+$(function(){
+
+    $('#btn_new').click( function(){
+        location.replace('{{ path('user_create') }}');
+    });
+
+    $('.ay_sel_row').click( function(){
+        location.replace($(this).find('a').attr('href'));
+    });
+
+});
+</script>
+{% endblock %}

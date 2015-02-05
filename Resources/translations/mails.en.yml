@@ -1,0 +1,11 @@
+# mail body
+'MessageFromUser': |
+    Dear %name%
+
+    The login information on a reservation system becomes below. 
+
+    Login URL:%indexUrl%
+    Login User ID:%userId%
+    Initial Password:%password%
+
+    It is above.
