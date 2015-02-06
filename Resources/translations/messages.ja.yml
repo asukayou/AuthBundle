@@ -38,7 +38,7 @@ Password confirm: パスワード確認
 'User account is disabled.': 'アカウントが無効です。'
 'User account has expired.': 'アカウントが有効期限切れです。'
 'User credentials have expired.': '証明書が有効期限切れです。'
-'Bad credentials': 'ユーザーＩＤかパスワードが間違っています。'
+'Bad credentials.': 'ユーザーＩＤかパスワードが間違っています。'
 # メール制御
 'This System sent e-mail for login.': 'ログイン用のメールを送信しました。'
 # メール件名
