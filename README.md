@@ -75,6 +75,12 @@ system_name: 'システム名'
 system_mail_address: '送信元メールアドレス'
 ```
 
+**app/config/parameters.yml.dist**
+```
+system_name: ~
+system_mail_address: ~
+```
+
 ```
 php app/console doctrine:schema:update --force
 php app/console doctrine:fixtures:load --fixtures=vendor/asukayou/auth-bundle/DataFixtures/ORM
