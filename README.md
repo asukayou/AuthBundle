@@ -13,6 +13,7 @@
     },
 ```
 
+**インストール**
 ```
 composer update asukayou/auth-bundle
 ```
@@ -71,16 +72,32 @@ logout:
 
 **app/config/parameters.yml**
 ```
-system_name: 'システム名'
-system_mail_address: '送信元メールアドレス'
+    mailer_transport: 'メールプロトコル'
+    mailer_host: 'メールホスト'
+    mailer_user: 'メールユーザー'
+    mailer_password: 'メールパスワード'
+    locale: ja
+    system_name: 'システム名'
+    system_mail_address: '送信元メールアドレス'
 ```
 
 **app/config/parameters.yml.dist**
 ```
-system_name: ~
-system_mail_address: ~
+    system_name: ~
+    system_mail_address: ~
 ```
 
+**app/config/config.yml**
+```
+framework:
+    translator:      { fallback: "%locale%" }
+swiftmailer:
+    spool:
+        type: file
+        path: "%kernel.root_dir%/spool"
+```
+
+**データーベース設定**
 ```
 php app/console doctrine:schema:update --force
 php app/console doctrine:fixtures:load --fixtures=vendor/asukayou/auth-bundle/DataFixtures/ORM
